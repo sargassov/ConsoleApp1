@@ -15,18 +15,17 @@ namespace ConsoleApp1
 
         public static void ladder()
         {
-            Console.WriteLine("\n\n\t\t\tL A D D E R\n\nEnter a two unsigned values: ");
-            short a, b, x, y;
-            a = Int16.Parse(Console.ReadLine());
-            b = Int16.Parse(Console.ReadLine());
+            Console.Write("\n\n\t\t\tL A D D E R\n\nEnter a two unsigned values. A = ");
+            short start, finish;
+            start = Int16.Parse(Console.ReadLine());
+            Console.Write("\nB = ");
+            finish = Int16.Parse(Console.ReadLine());
             Console.WriteLine("\n");
-            if (a < b) { x = a; y = b; }
-            else { x = b; y = a; }
-            for (; x<y+1; x++)
+            for (; start <= finish; start++)
             {
-                for(short z = 0; z < x; z++)
+                for(short repeat = 0; repeat < start; repeat++)
                 {
-                    Console.Write(x + " ");
+                    Console.Write(start + " ");
                 }
                 Console.WriteLine();
             }

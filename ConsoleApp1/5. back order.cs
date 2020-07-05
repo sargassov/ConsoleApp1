@@ -13,8 +13,7 @@ namespace ConsoleApp1
             char[] reverse = temp.ToCharArray();
             Array.Reverse(reverse);
             temp = new string(reverse);
-            int a = Int32.Parse(temp);
-            Console.WriteLine("\n\nValue in back order is look like this: " + a);
+            Console.WriteLine("\n\nValue in back order is look like this: " + temp);
             Console.WriteLine("\n");
             Program.menu();
         }

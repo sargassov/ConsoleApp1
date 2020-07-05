@@ -19,12 +19,13 @@ namespace ConsoleApp1
             string temp = "";
             for(short x = 0; x < text.Length; x++)
             {
-                char c = text[x];
-                bool l, u;
-                u = Char.IsUpper(c);
-                l = Char.IsLower(c);
-                if (u) temp += char.ToLower(c);
-                else if (l) temp += char.ToUpper(c);
+                char symbol = text[x];
+                bool is_lower, is_upper;
+                is_upper = Char.IsUpper(symbol);
+                is_lower = Char.IsLower(symbol);
+                if (is_upper) temp += char.ToLower(symbol);
+                else if (is_lower) temp += char.ToUpper(symbol);
+                else { temp += symbol; }
             }
             Console.WriteLine(temp);
             Console.WriteLine("\n");

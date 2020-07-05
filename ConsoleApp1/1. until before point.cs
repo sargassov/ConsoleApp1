@@ -11,18 +11,25 @@ namespace ConsoleApp1
         static void until_before()
         {
             Console.WriteLine("\t\t\t\t1.  U N T I L   B E F O R E  P O I N T\n\n\n");
-            Console.WriteLine("Введите символ с клавиатуры. Программа будет" +
-                " бесконечно считывать символы, пока вы не введете точку");
-            string point = ".", enter = null;
-            short count = 0;
-            while (enter != point)
+            Console.WriteLine("Введите текст с клавиатуры. Программа будет" +
+                " считывать символы до первой точки: ");
+            string text = "";
+            int findPoint;
+            do
             {
-                Console.Write("\n\nВведите cимвол: ");
-                enter = Console.ReadLine();
-                check(enter);
-                count++;
+                text += Console.ReadLine();
+                findPoint = text.IndexOf(".");
             }
-            Console.WriteLine("\n\nВведена точка. Всего введено " + count + " символов.\n\n");
+            while(findPoint == -1);
+
+            int start = 0, finish = text.IndexOf(" ", start, text.Length - start), count = 0;
+            while (finish != -1)
+            {
+                count++;
+                start = finish + 1;
+                finish = text.IndexOf(" ", start, text.Length - start);
+            }
+            Console.WriteLine("\n\nВведена точка. Всего введено " + count + " пробелов.\n\n");
             menu();
         }
 
