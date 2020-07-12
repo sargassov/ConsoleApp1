@@ -4,20 +4,30 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class Regist
-    /*Задание 3. Числовые значения символов нижнего регистра в коде ASCII
-     * отличаются от значений символов верхнего регистра на величину 32. 
-     * Используя эту  информацию, написать программу, которая считывает с 
-     * клавиатуры и конвертирует все символы нижнего регистра в символы 
-     * верхнего регистра и наоборот. */
+    class Task3Command : CommandInterface
     {
-        public static void register()
+        public bool CanRun(string userCommand)
+        {
+            return userCommand == "3";
+        }
+
+        public string GetHelp()
+        {
+            return "Выполнение 3-го задания";
+        }
+
+        public string GetMenuRow()
+        {
+            return "3 задание";
+        }
+
+        public string Run(string userCommand, ref bool isExit)
         {
             Console.WriteLine("\n\n\t\t\tR E G I S T E R\n\nEnter a random text\n");
             string text = Console.ReadLine();
             Console.Write("\n\nText after transformation: ");
             string temp = "";
-            for(short x = 0; x < text.Length; x++)
+            for (short x = 0; x < text.Length; x++)
             {
                 char symbol = text[x];
                 bool is_lower, is_upper;
@@ -28,8 +38,7 @@ namespace ConsoleApp1
                 else { temp += symbol; }
             }
             Console.WriteLine(temp);
-            Console.WriteLine("\n");
-            Program.menu();
+            return "\n3 задание решено\n";
         }
     }
 }
